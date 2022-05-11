@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Typing from './pages/typing';
+import Auth from './pages/auth'
+import { auth } from './firebase'
 
 function App() {
+
+  let signedIn = auth.currentUser !== null
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>header</div>
+      {signedIn &&
+        <Typing />}
+      {!signedIn &&
+      <Auth/>}
+      <div>footer</div>
     </div>
   );
 }
