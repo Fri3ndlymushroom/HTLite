@@ -1,14 +1,14 @@
 import React from 'react'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
-const auth = getAuth();
+import { signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
-
 type Props = {}
-export default function Auth({}: Props) {
+export default function Auth({auth, setSignedIn}: any) {
 
     const signInWithGoogle = ()=>{
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, provider).then((result:any)=>{
+            setSignedIn(true)
+        })
     }
 
   return (
