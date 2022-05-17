@@ -4,10 +4,14 @@ import Typing from './pages/typing';
 import Auth from './pages/auth'
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+
+
+import firebase from "firebase/app";
+import "firebase/functions"
+import "firebase/firestore"
+import "firebase/auth"
+import "firebase/analytics"
+
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,12 +30,20 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const db = getFirestore(app);
+const db = firebase.firestore();
+const auth = firebase.auth();
+const functions = firebase.functions();
 
+
+if (window.location.host === "localhost:3000") {
+  firebase.functions().useEmulator("localhost", 5001);
+  db.useEmulator('localhost', 8080);
+  //@ts-ignore
+  auth.useEmulator('http://localhost:9099/', { disableWarnings: true });
+}
 
 
 function App() {
@@ -42,9 +54,9 @@ function App() {
     <div className="App">
       <div>header</div>
       {signedIn &&
-        <Typing />}
+        <Typing {...{ db, functions }} />}
       {!signedIn &&
-        <Auth auth={auth} setSignedIn={setSignedIn}/>}
+        <Auth {...{auth, firebase, setSignedIn}} />}
       <div>footer</div>
     </div>
   );
