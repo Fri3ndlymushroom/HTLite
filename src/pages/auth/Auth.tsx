@@ -4,7 +4,10 @@ type Props = {}
 export default function Auth({auth, firebase, setSignedIn}: any) {
 
     const signInWithGoogle = ()=>{
-        auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+        auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(()=>{
+            console.log("ok")
+            setSignedIn(true)
+        })
     }
 
   return (

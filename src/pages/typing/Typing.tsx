@@ -6,10 +6,11 @@ export default function Typing({ db, functions }: any) {
 
 	const [inputValue, setInputValue] = useState("")
 
-
 	useEffect(() => {
 		const generateTest = async () => {
-			const addMessage = functions.httpsCallable(functions, 'generateTest')
+			const caller = functions.httpsCallable('generateTest')
+			
+			caller()
 				.then((result: any) => {
 					console.log(result)
 				});

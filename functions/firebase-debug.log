@@ -1,50 +1,53 @@
-[debug] [2022-05-17T10:05:35.881Z] ----------------------------------------------------------------------
-[debug] [2022-05-17T10:05:35.883Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\morih\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
-[debug] [2022-05-17T10:05:35.883Z] CLI Version:   10.9.0
-[debug] [2022-05-17T10:05:35.883Z] Platform:      win32
-[debug] [2022-05-17T10:05:35.883Z] Node Version:  v16.14.0
-[debug] [2022-05-17T10:05:35.884Z] Time:          Tue May 17 2022 12:05:35 GMT+0200 (Mitteleuropäische Sommerzeit)
-[debug] [2022-05-17T10:05:35.884Z] ----------------------------------------------------------------------
+[debug] [2022-05-17T10:17:19.451Z] ----------------------------------------------------------------------
+[debug] [2022-05-17T10:17:19.453Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\morih\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-05-17T10:17:19.454Z] CLI Version:   10.9.0
+[debug] [2022-05-17T10:17:19.454Z] Platform:      win32
+[debug] [2022-05-17T10:17:19.454Z] Node Version:  v16.14.0
+[debug] [2022-05-17T10:17:19.455Z] Time:          Tue May 17 2022 12:17:19 GMT+0200 (Mitteleuropäische Sommerzeit)
+[debug] [2022-05-17T10:17:19.455Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-05-17T10:05:35.948Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-05-17T10:05:35.948Z] > authorizing via signed-in user (morihues0@gmail.com)
-[debug] [2022-05-17T10:05:36.051Z] java version "18.0.1.1" 2022-04-22
-Java(TM) SE Runtime Environment (build 18.0.1.1+2-6)
+[debug] [2022-05-17T10:17:19.528Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-17T10:17:19.528Z] > authorizing via signed-in user (morihues0@gmail.com)
+[debug] [2022-05-17T10:17:19.688Z] java version "18.0.1.1" 2022-04-22
 
-[debug] [2022-05-17T10:05:36.051Z] Java HotSpot(TM) 64-Bit Server VM (build 18.0.1.1+2-6, mixed mode, sharing)
+[debug] [2022-05-17T10:17:19.689Z] Java(TM) SE Runtime Environment (build 18.0.1.1+2-6)
+Java HotSpot(TM) 64-Bit Server VM (build 18.0.1.1+2-6, mixed mode, sharing)
 
-[debug] [2022-05-17T10:05:36.068Z] Parsed Java major version: 18
+[debug] [2022-05-17T10:17:19.714Z] Parsed Java major version: 18
 [info] i  emulators: Starting emulators: auth, functions, firestore, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting"}}
-[debug] [2022-05-17T10:05:36.081Z] [hub] writing locator at C:\Users\morih\AppData\Local\Temp\hub-htlite-c7797.json
+[debug] [2022-05-17T10:17:19.739Z] [hub] writing locator at C:\Users\morih\AppData\Local\Temp\hub-htlite-c7797.json
 [warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mdatabase, pubsub, storage\u001b[22m"}}
 [info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
-[debug] [2022-05-17T10:05:36.097Z] defaultcredentials: writing to file C:\Users\morih\AppData\Roaming\firebase\morihues0_gmail_com_application_default_credentials.json
-[debug] [2022-05-17T10:05:36.098Z] Setting GAC to C:\Users\morih\AppData\Roaming\firebase\morihues0_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\morih\\AppData\\Roaming\\firebase\\morihues0_gmail_com_application_default_credentials.json"}}
-[debug] [2022-05-17T10:05:36.101Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig [none]
-[debug] [2022-05-17T10:05:36.505Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig 200
-[debug] [2022-05-17T10:05:36.505Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig {"projectId":"htlite-c7797","storageBucket":"htlite-c7797.appspot.com","locationId":"europe-west"}
-[debug] [2022-05-17T10:05:36.533Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
-[debug] [2022-05-17T10:05:36.534Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-05-17T10:05:36.534Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\morih\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.14.3.jar","--host","localhost","--port",8082,"--rules","C:\\coding\\websites\\htlite\\firestore.rules","--functions_emulator","localhost:5001"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\morih\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.14.3.jar\",\"--host\",\"localhost\",\"--port\",8082,\"--rules\",\"C:\\\\coding\\\\websites\\\\htlite\\\\firestore.rules\",\"--functions_emulator\",\"localhost:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[debug] [2022-05-17T10:17:19.763Z] defaultcredentials: writing to file C:\Users\morih\AppData\Roaming\firebase\morihues0_gmail_com_application_default_credentials.json
+[debug] [2022-05-17T10:17:19.765Z] Setting GAC to C:\Users\morih\AppData\Roaming\firebase\morihues0_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\morih\\AppData\\Roaming\\firebase\\morihues0_gmail_com_application_default_credentials.json"}}
+[debug] [2022-05-17T10:17:19.769Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig [none]
+[debug] [2022-05-17T10:17:20.179Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig 200
+[debug] [2022-05-17T10:17:20.182Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/adminSdkConfig {"projectId":"htlite-c7797","storageBucket":"htlite-c7797.appspot.com","locationId":"europe-west"}
+[debug] [2022-05-17T10:17:20.469Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-05-17T10:17:20.469Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-05-17T10:17:20.470Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\morih\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.14.3.jar","--host","localhost","--port",8080,"--rules","C:\\coding\\websites\\htlite\\firestore.rules","--functions_emulator","localhost:5001"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\morih\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.14.3.jar\",\"--host\",\"localhost\",\"--port\",8080,\"--rules\",\"C:\\\\coding\\\\websites\\\\htlite\\\\firestore.rules\",\"--functions_emulator\",\"localhost:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
 [info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
-[debug] [2022-05-17T10:05:44.293Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites 
-[debug] [2022-05-17T10:05:45.736Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites 200
-[debug] [2022-05-17T10:05:45.736Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites {"sites":[{"name":"projects/htlite-c7797/sites/htlite-c7797","defaultUrl":"https://htlite-c7797.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2022-05-17T10:05:45.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config [none]
-[debug] [2022-05-17T10:05:46.654Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config 200
-[debug] [2022-05-17T10:05:46.654Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config {"projectId":"htlite-c7797","appId":"1:233530528785:web:ec7312df2e77ac02f38db0","storageBucket":"htlite-c7797.appspot.com","locationId":"europe-west","apiKey":"AIzaSyBzL7cpy_j71IAs9DBAkzVy8jt2tyaPRi8","authDomain":"htlite-c7797.firebaseapp.com","messagingSenderId":"233530528785","measurementId":"G-BV7F6HZQZN"}
+[debug] [2022-05-17T10:17:30.427Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites 
+[debug] [2022-05-17T10:17:31.623Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites 200
+[debug] [2022-05-17T10:17:31.623Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/htlite-c7797/sites {"sites":[{"name":"projects/htlite-c7797/sites/htlite-c7797","defaultUrl":"https://htlite-c7797.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-05-17T10:17:31.623Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config [none]
+[debug] [2022-05-17T10:17:32.592Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config 200
+[debug] [2022-05-17T10:17:32.593Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/htlite-c7797/webApps/-/config {"projectId":"htlite-c7797","appId":"1:233530528785:web:ec7312df2e77ac02f38db0","storageBucket":"htlite-c7797.appspot.com","locationId":"europe-west","apiKey":"AIzaSyBzL7cpy_j71IAs9DBAkzVy8jt2tyaPRi8","authDomain":"htlite-c7797.firebaseapp.com","messagingSenderId":"233530528785","measurementId":"G-BV7F6HZQZN"}
 [info] i  hosting: Serving hosting files from: src {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1msrc\u001b[22m"}}
 [info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
-[debug] [2022-05-17T10:05:46.690Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-05-17T10:05:46.690Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2022-05-17T10:05:46.690Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\morih\\.cache\\firebase\\emulators\\ui-v1.7.0\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\morih\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.7.0\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[debug] [2022-05-17T10:17:32.616Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-05-17T10:17:32.616Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-05-17T10:17:32.616Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\morih\\.cache\\firebase\\emulators\\ui-v1.7.0\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\morih\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.7.0\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
 [info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2022-05-17T10:05:46.813Z] Web / API server started at localhost:4000
+[info] i  hosting: 127.0.0.1 - - [17/May/2022:10:17:32 +0000] "GET / HTTP/1.1" 200 4596 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/May/2022:10:17:32 +0000] \"GET / HTTP/1.1\" 200 4596 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\""}}
+[debug] [2022-05-17T10:17:32.725Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js [none]
+[debug] [2022-05-17T10:17:32.729Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js [none]
+[debug] [2022-05-17T10:17:32.747Z] Web / API server started at localhost:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
 [info] i  functions: Watching "C:\coding\websites\htlite\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\coding\\websites\\htlite\\functions\" for Cloud Functions..."}}
-[debug] [2022-05-17T10:05:46.972Z] Validating nodejs source
+[debug] [2022-05-17T10:17:32.882Z] Validating nodejs source
 [warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
-[debug] [2022-05-17T10:05:49.094Z] > [functions] package.json contents: {
+[debug] [2022-05-17T10:17:36.551Z] > [functions] package.json contents: {
   "name": "functions",
   "scripts": {
     "build": "tsc",
@@ -69,6 +72,18 @@ Java(TM) SE Runtime Environment (build 18.0.1.1+2-6)
   },
   "private": true
 }
-[debug] [2022-05-17T10:05:49.095Z] Building nodejs source
-[debug] [2022-05-17T10:05:49.095Z] Analyzing nodejs backend spec
-[debug] [2022-05-17T10:05:49.096Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-05-17T10:17:36.552Z] Building nodejs source
+[debug] [2022-05-17T10:17:36.552Z] Analyzing nodejs backend spec
+[debug] [2022-05-17T10:17:36.553Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-05-17T10:17:36.567Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js 200
+[debug] [2022-05-17T10:17:36.567Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/May/2022:10:17:36 +0000] "GET /__/firebase/9.8.1/firebase-auth-compat.js HTTP/1.1" 200 124464 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/May/2022:10:17:36 +0000] \"GET /__/firebase/9.8.1/firebase-auth-compat.js HTTP/1.1\" 200 124464 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\""}}
+[debug] [2022-05-17T10:17:36.591Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js 200
+[debug] [2022-05-17T10:17:36.592Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/May/2022:10:17:36 +0000] "GET /__/firebase/9.8.1/firebase-app-compat.js HTTP/1.1" 200 27627 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/May/2022:10:17:36 +0000] \"GET /__/firebase/9.8.1/firebase-app-compat.js HTTP/1.1\" 200 27627 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\""}}
+[debug] [2022-05-17T10:17:36.602Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js [none]
+[debug] [2022-05-17T10:17:36.606Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js [none]
+[debug] [2022-05-17T10:17:36.608Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-functions-compat.js [none]
+[debug] [2022-05-17T10:17:36.611Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-messaging-compat.js [none]
+[debug] [2022-05-17T10:17:36.616Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-storage-compat.js [none]
+[debug] [2022-05-17T10:17:36.619Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics-compat.js [none]
