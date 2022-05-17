@@ -1,5 +1,7 @@
 #testinput__wrapper{
-    
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
 }
 
 #testinput__centerer{
