@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import './index.css'
 import '../../App.css'
+import { json } from 'stream/consumers';
 
 class Test {
-	text: any;
+	words: any;
+	log: any;
 	constructor(newText: any) {
-		this.text = {text: newText, arr: newText.split("")}
+		this.words = newText.split(" ")
+		this.log = []
+	}
+	getDisplayString = () => {
+		return
+	}
+	getString = () => {
+		return this.words.join(" ")
+	}
+	getWordArray = () => {
+		return this.words
+	}
+	removeWord = () =>{
+		this.words.shift()
+	}
+	addLog = (log:any)=>{
+		this.log.push(log)
+	}
+	getCurrentWord = ()=>{
+		return this.words[0]
 	}
 };
 
@@ -22,10 +43,9 @@ export default function Typing({ db, functions }: any) {
 			.then((newText: any) => {
 				setTest(new Test(newText.data))
 				setTestReady(true)
+				console.log(test)
 			});
 	}
-
-
 	useEffect(() => {
 		getNewTest()
 	}, [])
@@ -33,6 +53,32 @@ export default function Typing({ db, functions }: any) {
 
 
 
+	const cloneClass = (obj:any)=>{return Object.assign(Object.create(Object.getPrototypeOf(obj)), obj)}
+
+	const editTest =(operation:any) =>{
+		let newTest = cloneClass(test)
+		console.log(newTest)
+		operation(newTest)
+		//@ts-ignore
+		setTest(newTest)
+
+	}
+
+	const onTextInput = (event:any)=>{
+		setInputValue(event.target.value)
+		if(event.nativeEvent.data === " "){
+
+			editTest((newTest:any)=>{
+				newTest.addLog({
+					word: newTest.getCurrentWord(),
+					correct: newTest.getCurrentWord() + " " === event.target.value,
+					word_length: newTest.getCurrentWord().length
+				})
+				newTest.removeWord() 
+			})
+			setInputValue("")
+		}
+	}
 
 
 	return (
@@ -40,10 +86,9 @@ export default function Typing({ db, functions }: any) {
 			<div>Hello world</div>
 			<div id="testinput__centerer">
 				<div id="testinput__wrapper">
-					<input onChange={(event) => { setInputValue(event.target.value) }}></input>
-					<span>{inputValue}</span>
-					<span>{test.text}</span>
-					<button onClick={() => { getNewTest() }}>getNew</button>
+					<input value={inputValue} onChange={(event)=>onTextInput(event)}></input>
+					<span>{test.getString()}</span>
+					<button onClick={() => { getNewTest() }}>Get New</button>
 				</div>
 			</div>
 		</div>
