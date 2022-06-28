@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './index.css'
 import '../../App.css'
 import { json } from 'stream/consumers';
-
+import invokeLambda from '../../dependencies/invokeLambda';
 class Test {
 	words: any;
 	log: any;
@@ -19,16 +19,19 @@ class Test {
 	getWordArray = () => {
 		return this.words
 	}
-	removeWord = () =>{
+	removeWord = () => {
 		this.words.shift()
 	}
-	addLog = (log:any)=>{
+	addLog = (log: any) => {
 		this.log.push(log)
 	}
-	getCurrentWord = ()=>{
+	getCurrentWord = () => {
 		return this.words[0]
 	}
 };
+
+
+
 
 export default function Typing({ db, functions }: any) {
 
@@ -37,14 +40,7 @@ export default function Typing({ db, functions }: any) {
 	const [test, setTest] = useState(new Test(""))
 
 	const getNewTest = async () => {
-		const caller = functions.httpsCallable('generateTest')
 
-		caller()
-			.then((newText: any) => {
-				setTest(new Test(newText.data))
-				setTestReady(true)
-				console.log(test)
-			});
 	}
 	useEffect(() => {
 		getNewTest()
@@ -53,9 +49,9 @@ export default function Typing({ db, functions }: any) {
 
 
 
-	const cloneClass = (obj:any)=>{return Object.assign(Object.create(Object.getPrototypeOf(obj)), obj)}
+	const cloneClass = (obj: any) => { return Object.assign(Object.create(Object.getPrototypeOf(obj)), obj) }
 
-	const editTest =(operation:any) =>{
+	const editTest = (operation: any) => {
 		let newTest = cloneClass(test)
 		console.log(newTest)
 		operation(newTest)
@@ -64,17 +60,17 @@ export default function Typing({ db, functions }: any) {
 
 	}
 
-	const onTextInput = (event:any)=>{
+	const onTextInput = (event: any) => {
 		setInputValue(event.target.value)
-		if(event.nativeEvent.data === " "){
+		if (event.nativeEvent.data === " ") {
 
-			editTest((newTest:any)=>{
+			editTest((newTest: any) => {
 				newTest.addLog({
 					word: newTest.getCurrentWord(),
 					correct: newTest.getCurrentWord() + " " === event.target.value,
 					word_length: newTest.getCurrentWord().length
 				})
-				newTest.removeWord() 
+				newTest.removeWord()
 			})
 			setInputValue("")
 		}
@@ -82,15 +78,12 @@ export default function Typing({ db, functions }: any) {
 
 
 	return (
-		<div className="body">
-			<div>Hello world</div>
-			<div id="testinput__centerer">
-				<div id="testinput__wrapper">
-					<input value={inputValue} onChange={(event)=>onTextInput(event)}></input>
-					<span>{test.getString()}</span>
-					<button onClick={() => { getNewTest() }}>Get New</button>
-				</div>
-			</div>
+
+		<div>
+			<input value={inputValue} onChange={(event) => onTextInput(event)}></input>
+			<span>{test.getString()}</span>
+			<button onClick={() => { getNewTest() }}>Get New</button>
+			<button onClick={() => invokeLambda("userHandler", {})}>get lifesign</button>
 		</div>
 	)
 }
