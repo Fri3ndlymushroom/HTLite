@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './index.css'
 import '../../App.css'
 import { json } from 'stream/consumers';
-import invokeLambda from '../../dependencies/invokeLambda';
+
 class Test {
 	words: any;
 	log: any;
@@ -30,9 +30,6 @@ class Test {
 	}
 };
 
-
-
-
 export default function Typing({ db, functions }: any) {
 
 	const [inputValue, setInputValue] = useState("")
@@ -40,7 +37,14 @@ export default function Typing({ db, functions }: any) {
 	const [test, setTest] = useState(new Test(""))
 
 	const getNewTest = async () => {
+		const caller = functions.httpsCallable('generateTest')
 
+		caller()
+			.then((newText: any) => {
+				setTest(new Test(newText.data))
+				setTestReady(true)
+				console.log(test)
+			});
 	}
 	useEffect(() => {
 		getNewTest()
@@ -78,12 +82,10 @@ export default function Typing({ db, functions }: any) {
 
 
 	return (
-
-		<div>
+		<div className="window">
 			<input value={inputValue} onChange={(event) => onTextInput(event)}></input>
 			<span>{test.getString()}</span>
 			<button onClick={() => { getNewTest() }}>Get New</button>
-			<button onClick={() => invokeLambda("userHandler", {})}>get lifesign</button>
 		</div>
 	)
 }

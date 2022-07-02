@@ -3,10 +3,26 @@
   background-color: grey;
   position: relative;
   display:grid;
-  grid-template-rows: minmax(0, 100px) minmax(0, 1fr) minmax(0, 30px);  
+  grid-template-rows: minmax(0, 30px) minmax(0, 1fr) minmax(0, 30px);  
   margin: 0;
   gap: 10px;
 }
 .body{
   position: relative;
+}
+
+#header, #footer{
+  background-color: rgba(1, 255, 242, 0.26);
+}
+
+#desktop{
+  justify-self: center;
+}
+
+.window{
+  height: 300px;
+  width: 300px;
+  background-color: rgba(1, 255, 242, 0.26);
+  border-radius: 10px;
+  border: black solid 1px
 }
